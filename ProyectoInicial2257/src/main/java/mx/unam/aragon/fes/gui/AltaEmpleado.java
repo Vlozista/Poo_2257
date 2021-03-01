@@ -5,6 +5,8 @@
  */
 
 package mx.unam.aragon.fes.gui;
+import mx.unam.aragon.fres.Empleado;
+
 
 /**
  *
@@ -62,6 +64,8 @@ public class AltaEmpleado extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
+        jButton5 = new javax.swing.JButton();
+        jButton6 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -122,31 +126,32 @@ public class AltaEmpleado extends javax.swing.JFrame {
             jPanel3Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
             .add(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
-                .add(jPanel3Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING, false)
-                    .add(jPanel3Layout.createSequentialGroup()
-                        .add(jLabel8)
-                        .add(18, 18, 18)
-                        .add(jTextField10, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 150, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                        .add(18, 18, 18)
-                        .add(jLabel9)
-                        .add(18, 18, 18)
-                        .add(jTextField11))
-                    .add(jPanel3Layout.createSequentialGroup()
-                        .add(jLabel6)
-                        .add(18, 18, 18)
-                        .add(jTextField8))
-                    .add(jPanel3Layout.createSequentialGroup()
-                        .add(jLabel7)
-                        .add(18, 18, 18)
-                        .add(jTextField9))
+                .add(jPanel3Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                    .add(jPanel3Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING, false)
+                        .add(jPanel3Layout.createSequentialGroup()
+                            .add(jLabel8)
+                            .add(18, 18, 18)
+                            .add(jTextField10, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 150, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                            .add(18, 18, 18)
+                            .add(jLabel9)
+                            .add(18, 18, 18)
+                            .add(jTextField11, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 84, Short.MAX_VALUE))
+                        .add(jPanel3Layout.createSequentialGroup()
+                            .add(jLabel6)
+                            .add(18, 18, 18)
+                            .add(jTextField8))
+                        .add(jPanel3Layout.createSequentialGroup()
+                            .add(jLabel7)
+                            .add(18, 18, 18)
+                            .add(jTextField9)))
                     .add(jPanel3Layout.createSequentialGroup()
                         .add(jLabel4)
                         .add(18, 18, 18)
-                        .add(jTextField6, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 300, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
-                .add(18, 18, 18)
-                .add(jLabel5)
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
-                .add(jTextField7, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 150, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                        .add(jTextField6, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 450, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                        .add(26, 26, 26)
+                        .add(jLabel5)
+                        .add(18, 18, 18)
+                        .add(jTextField7, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 270, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
@@ -315,6 +320,16 @@ public class AltaEmpleado extends javax.swing.JFrame {
 
         jButton4.setText(">>");
 
+        jButton5.setText("Nuevo registro");
+        jButton5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton5MouseClicked(evt);
+            }
+        });
+
+        jButton6.setText("Enviar");
+        jButton6.setEnabled(false);
+
         org.jdesktop.layout.GroupLayout layout = new org.jdesktop.layout.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -325,7 +340,11 @@ public class AltaEmpleado extends javax.swing.JFrame {
                         .addContainerGap()
                         .add(jTabbedPane1))
                     .add(layout.createSequentialGroup()
-                        .add(422, 422, 422)
+                        .add(19, 19, 19)
+                        .add(jButton5)
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
+                        .add(jButton6)
+                        .add(277, 277, 277)
                         .add(jButton3)
                         .add(18, 18, 18)
                         .add(jButton4)
@@ -345,7 +364,9 @@ public class AltaEmpleado extends javax.swing.JFrame {
                     .add(jButton1)
                     .add(jButton2)
                     .add(jButton3)
-                    .add(jButton4))
+                    .add(jButton4)
+                    .add(jButton5)
+                    .add(jButton6))
                 .addContainerGap(34, Short.MAX_VALUE))
         );
 
@@ -372,6 +393,39 @@ public class AltaEmpleado extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField15ActionPerformed
 
+    private void jButton5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton5MouseClicked
+        // TODO add your handling code here:
+        System.out.println("Nuevo empleado!!!");
+        this.LimpiarFormulario();
+        
+        Empleado emp = new Empleado();
+        emp.setNombre(thi.jTextField1.getText() );
+        emp.setApPaterno(thi.jTextField2.getText() );
+        emp.setApMaterno( jTextFlied3.getText() );
+        emp.setEdad( Integer.parseInt( jTextField4.getText() ) ); //convierte a int
+        emp.setCurp(JtextFlied5.getText() );
+        emp.getDomicilio().setcalle(this.jTextField6.getText() );
+        
+    }//GEN-LAST:event_jButton5MouseClicked
+
+    private void LimpiarFormulario(){
+    this.jTextField1.setText("");
+    this.jTextField2.setText("");
+    this.jTextField3.setText("");
+    this.jTextField4.setText("");
+    this.jTextField5.setText("");
+    this.jTextField6.setText("");
+    this.jTextField7.setText("");
+    this.jTextField8.setText("");
+    this.jTextField9.setText("");
+    this.jTextField10.setText("");
+    this.jTextField11.setText("");
+    this.jTextField12.setText("");
+    this.jTextField13.setText("");
+    this.jTextField14.setText("");
+    }
+    
+    
     /**
      * @param args the command line arguments
      */
@@ -412,6 +466,8 @@ public class AltaEmpleado extends javax.swing.JFrame {
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
