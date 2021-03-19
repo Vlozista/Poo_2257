@@ -342,6 +342,9 @@
                   <Properties>
                     <Property name="text" type="java.lang.String" value="jTextField11"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField11ActionPerformed"/>
+                  </Events>
                 </Component>
               </SubComponents>
             </Container>
@@ -409,7 +412,7 @@
           <SubComponents>
             <Component class="javax.swing.JTextField" name="jTextField12">
               <Properties>
-                <Property name="text" type="java.lang.String" value="jTextField11"/>
+                <Property name="text" type="java.lang.String" value="jTextField12"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField12ActionPerformed"/>
@@ -427,7 +430,7 @@
             </Component>
             <Component class="javax.swing.JTextField" name="jTextField13">
               <Properties>
-                <Property name="text" type="java.lang.String" value="jTextField12"/>
+                <Property name="text" type="java.lang.String" value="jTextField13"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField13ActionPerformed"/>
@@ -440,7 +443,7 @@
             </Component>
             <Component class="javax.swing.JTextField" name="jTextField14">
               <Properties>
-                <Property name="text" type="java.lang.String" value="jTextField13"/>
+                <Property name="text" type="java.lang.String" value="jTextField14"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField14ActionPerformed"/>
@@ -453,7 +456,7 @@
             </Component>
             <Component class="javax.swing.JTextField" name="jTextField15">
               <Properties>
-                <Property name="text" type="java.lang.String" value="jTextField14"/>
+                <Property name="text" type="java.lang.String" value="jTextField15"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField15ActionPerformed"/>

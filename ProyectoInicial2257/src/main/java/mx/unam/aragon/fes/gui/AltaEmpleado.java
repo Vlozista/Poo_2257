@@ -6,7 +6,7 @@
 
 package mx.unam.aragon.fes.gui;
 import mx.unam.aragon.fes.Empleado;
-
+import mx.unam.aragon.fes.Direccion;
 
 /**
  *
@@ -124,6 +124,11 @@ public class AltaEmpleado extends javax.swing.JFrame {
         jLabel9.setText("CP:");
 
         jTextField11.setText("jTextField11");
+        jTextField11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField11ActionPerformed(evt);
+            }
+        });
 
         org.jdesktop.layout.GroupLayout jPanel3Layout = new org.jdesktop.layout.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -238,7 +243,7 @@ public class AltaEmpleado extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Personales", jPanel1);
 
-        jTextField12.setText("jTextField11");
+        jTextField12.setText("jTextField12");
         jTextField12.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField12ActionPerformed(evt);
@@ -249,7 +254,7 @@ public class AltaEmpleado extends javax.swing.JFrame {
 
         jLabel11.setText("Departamento:");
 
-        jTextField13.setText("jTextField12");
+        jTextField13.setText("jTextField13");
         jTextField13.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField13ActionPerformed(evt);
@@ -258,7 +263,7 @@ public class AltaEmpleado extends javax.swing.JFrame {
 
         jLabel12.setText("Sueldo:");
 
-        jTextField14.setText("jTextField13");
+        jTextField14.setText("jTextField14");
         jTextField14.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField14ActionPerformed(evt);
@@ -267,7 +272,7 @@ public class AltaEmpleado extends javax.swing.JFrame {
 
         jLabel13.setText("Horas extra: ");
 
-        jTextField15.setText("jTextField14");
+        jTextField15.setText("jTextField15");
         jTextField15.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField15ActionPerformed(evt);
@@ -408,24 +413,29 @@ public class AltaEmpleado extends javax.swing.JFrame {
         emp.setApPaterno(this.jTextField2.getText() );
         emp.setApMaterno( jTextField3.getText() );
         emp.setEdad( Integer.parseInt( jTextField4.getText() ) ); //convierte a int
-        emp.setCurp( jtextField5.getText() );
-        emp.setDomicilio(new Direccion() );
+        emp.setCurp( jTextField5.getText() );
+        emp.setDomicilio(new Direccion());
         emp.getDomicilio().setCalle(this.jTextField6.getText() );
         emp.getDomicilio().setNumero(this.jTextField7.getText() );
         emp.getDomicilio().setColonia(this.jTextField8.getText() );
         emp.getDomicilio().setDelegacion(this.jTextField9.getText() );
         emp.getDomicilio().setEstado(this.jTextField10.getText() );
-        emp.setNumeroEmpleado(Integer.parseInt(this.jTextField11.getText() ) );
-        emp.setDepartamento(this.jTextField12.getText() );
-        emp.setSueldo(Float.parseFloat(this.jTextField13.getText() ) );
-        emp.setHorasExtra(Integer.parseInt(this.jTextField14.getText() ) );
-        int confirmar = j0ptionPane.showConfirmDialog(this, "¿Deseas guardar estos datos?");
+        emp.setDomicilio().setCp(this.jTextField11.getText()) ;
+        emp.setNumeroEmpleado(Integer.parseInt(this.jTextField12.getText() ) );
+        emp.setDepartamento(this.jTextField13.getText() );
+        emp.setSueldo(Float.parseFloat(this.jTextField14.getText() ) );
+        emp.setHorasExtra(Integer.parseInt(this.jTextField15.getText() ) );
+        int confirmar = JOptionPane.showConfirmDialog(this, "¿Deseas guardar estos datos?");
         
     }//GEN-LAST:event_jButton5MouseClicked
 
     private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField4ActionPerformed
+
+    private void jTextField11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField11ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField11ActionPerformed
 
     private void LimpiarFormulario(){
     this.jTextField1.setText("");
